@@ -1,0 +1,110 @@
+\documentclass{beamer}
+
+\usetheme[bgphoto]{3ie}
+
+% Set custom font (requires to compile with XeLaTeX).
+\usepackage{ifxetex}
+\ifxetex
+    \usepackage{fontspec}
+    \setsansfont[Scale=0.95]{Arial}
+\fi
+
+\usepackage{lipsum}
+
+\title{Main Title}
+\subtitle{Subtitle}
+\author{Author}
+\institute{Your title, 3ie}
+
+\date{Date of presentation}
+
+\begin{document}
+    \begin{frame}
+        \maketitle
+        % If the theme option "nologo" is specified, a custom logo
+        % can be added with the following commands:
+        %\begin{tikzpicture}[overlay, remember picture]
+        %    \node at (current page.north) [anchor=north, inner sep=2cm]
+        %    {
+        %        \includegraphics[width=0.3\paperwidth]{logo_centrato_BN_negativo.png}
+        %    };
+        %\end{tikzpicture}
+    \end{frame}
+
+    \begin{frame}{Who we are \& what we do}
+    3ie is a member-based international NGO promoting evidence-informed development policies and programmes. 
+    \begin{itemize}   
+        \item Grant maker and standard setter for policy-relevant impact evaluations, systematic reviews, evidence gap maps, evidence syntheses and replication studies focussed on low- and middle-income countries
+        \item Convener of forums to build a culture of evaluation, capacity to undertake impact evaluations and reviews and commitment to evidence-informed decision-making
+        \item Producer of knowledge products for policymakers, programme managers, researchers, civil society, 
+the media and donors
+    \end{itemize}
+    \end{frame}
+    
+    \begin{frame}{Table of contents}
+      \tableofcontents
+    \end{frame}
+    
+    \section{Section 1}
+    % Section page.
+    \begin{frame}[plain]{}
+        \sectionpage
+    \end{frame}
+    
+    \begin{frame}{Slide 1}
+        \lipsum[1]
+    \end{frame}
+    
+    \subsection{Subsection 1.1}
+    \begin{frame}[plain]{}
+        \subsectionpage
+    \end{frame}
+    \begin{frame}
+        This frame has an empty title.
+        \vfill
+        \begin{itemize}
+            \item item 1
+            \begin{itemize}
+                \item item 1.1
+                \item item 1.2
+            \end{itemize}
+            \item item 2
+            \item item 3
+        \end{itemize}
+    \end{frame}
+    
+    \subsection{Subsection 1.2}
+    % Slide without numbering.
+    \begin{frame}[nonumber]{Slide 1.2 without numbering}
+        \lipsum[2]
+    \end{frame}
+    
+    \section[Short]{Section 2}
+    \begin{frame}{Slide 2}
+        \begin{block}{Block}
+            Text.
+        \end{block}
+        \pause
+        \begin{alertblock}{Alert block}
+            Alert \alert{text}.
+        \end{alertblock}
+        \pause
+        \begin{exampleblock}{Example block}
+            Example {text}.
+        \end{exampleblock}
+    \end{frame}
+
+\section{}
+    % Section page.
+    \begin{frame}{}
+        % If the theme option "nologo" is specified, a custom logo
+        % can be added with the following commands:
+        \begin{tikzpicture}[overlay, remember picture]
+            \node at (current page.north) [anchor=north, inner sep=0pt]
+            {
+                \includegraphics[width=\paperwidth]{3ie_Thank_you.png}
+            };
+        \end{tikzpicture}
+    \end{frame}
+
+\end{document}

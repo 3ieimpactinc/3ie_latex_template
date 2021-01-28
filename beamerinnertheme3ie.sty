@@ -1,0 +1,91 @@
+\mode<presentation>
+
+% Background.
+\defbeamertemplate*{background}{3ie}{
+    % Titlepage.
+    \ifnum\c@framenumber=0
+    \if@bgphoto
+        \begin{tikzpicture}[overlay, remember picture]
+                \node at (current page.center) {\includegraphics[width=\paperwidth, height=\paperheight]{3ie_background.png}};
+
+            \fi
+
+        \end{tikzpicture}
+    \else
+        \begin{tikzpicture}[overlay, remember picture]
+           \node (head) at (current page.north) [anchor=north, minimum width=\paperwidth, minimum height=0.1835\paperheight, fill=blue3ie] {};
+            \node (foot) at (current page.south) [anchor=south, minimum width=\paperwidth, minimum height=0.105\paperheight, fill=white] {};
+        \end{tikzpicture}
+    \fi
+}
+
+% Only footer background.
+\defbeamertemplate*{background}{footer}{
+    \begin{tikzpicture}[overlay, remember picture]
+    \node (foot) at (current page.south) [anchor=south, minimum width=\paperwidth, minimum height=0.105\paperheight, fill=white] {};
+    \end{tikzpicture}
+}
+
+% Title page.
+\defbeamertemplate*{title page}{3ie}[1][]
+{
+    \color{blue3ie}
+    \vspace{3.5cm}
+    
+    \begin{minipage}[t][\baselineskip]{\paperwidth}
+        {\Large\bf \inserttitle}
+    \end{minipage}
+
+    \begin{minipage}[t][2\baselineskip]{\paperwidth}
+        {\large \insertsubtitle}
+    \end{minipage}
+    
+    \vfill
+    
+    \begin{minipage}[t][\baselineskip]{\paperwidth}
+        {\bf \insertauthor}
+    \end{minipage}
+
+    \begin{minipage}[t][\baselineskip]{\paperwidth}
+        {\bf \insertinstitute}
+    \end{minipage}
+
+    \vfill
+
+    \begin{minipage}[t][\baselineskip]{\paperwidth}
+        \insertdate
+    \end{minipage}
+    
+    \vfill
+    
+    \addtocounter{framenumber}{-1}
+}
+
+% Table of Contents.
+\setbeamertemplate{section in toc}[circle]
+\setbeamertemplate{subsection in toc}{\leavevmode \leftskip=0.7em {\color{blue3ie} $\bullet$} \hskip1pt \inserttocsubsection\par}  
+
+% Section page.
+\defbeamertemplate*{section page}{3ie}{
+    \begin{tikzpicture}[overlay, remember picture]
+        \node (foot) at (current page.south) [anchor=south, minimum width=\paperwidth, minimum height=0.4415\paperheight, fill=white] {};
+        \node at ([shift={(\xshift, 3.5)}] current page.south west) [anchor=north west, inner sep=0pt, text width=\textwidth]
+        {
+            {\color{blue3ie}\Large\bf \insertsection}
+        };
+    \end{tikzpicture}
+}
+\setbeamertemplate{section page}[3ie]
+
+
+% Subsection page.
+\defbeamertemplate*{subsection page}{3ie}{
+    \begin{tikzpicture}[overlay, remember picture]
+    \node (foot) at (current page.south) [anchor=south, minimum width=\paperwidth, minimum height=0.4415\paperheight, fill=white] {};
+    \node at ([shift={(\xshift, 3.5)}] current page.south west) [anchor=north west, inner sep=0pt, text width=\textwidth]
+    {
+        {\color{blue3ie}\Large\bf \insertsubsection}
+    };
+    \end{tikzpicture}
+}
+\setbeamertemplate{subsection page}[3ie]
