@@ -1,1 +1,1 @@
-# 3ie_latex_template
+# 3ie Latex Template
